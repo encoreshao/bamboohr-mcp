@@ -11,7 +11,14 @@ A Model Context Protocol (MCP) library for BambooHR, built with Node.js and Type
 ## Installation
 
 ```sh
-npm install bamboohr-mcp
+# Clone the repository
+git clone https://github.com/encoreshao/bamboohr-mcp.git
+
+# Navigate to the project directory
+cd bamboohr-mcp
+
+# Install dependencies
+npm install
 ```
 
 ## Usage
@@ -76,12 +83,31 @@ You can pass your BambooHR API token and company domain directly to the methods,
 
 - `BAMBOOHR_TOKEN` — Your BambooHR API token
 - `BAMBOOHR_COMPANY_DOMAIN` — Your BambooHR company domain (the part before .bamboohr.com)
-
-**Optional:**
-
 - `BAMBOOHR_EMPLOYEE_ID` — Your BambooHR employee ID
-- `BAMBOOHR_PROJECT_ID` — Default project ID for time tracking
-- `BAMBOOHR_TASK_ID` — Default task ID for time tracking
+
+### Creating a BambooHR API Token
+
+To use this library, you'll need to create a BambooHR API token:
+
+1. Log in to your BambooHR account
+2. Click on your profile picture in the bottom-left corner
+3. Select "API Keys" from the dropdown menu
+4. Click "Add New Key"
+5. Enter a API Key Name for your key (e.g., "MCP Server"), and click "Generate Key"
+6. Copy the generated token immediately (it will only be shown once)
+
+### Finding Your Company Domain
+
+Your company domain is the subdomain used in your BambooHR URL:
+
+- If you access BambooHR at `https://yourcompany.bamboohr.com`, then your company domain is `yourcompany`
+- This value should be used for the `BAMBOOHR_COMPANY_DOMAIN` environment variable or passed directly to the API methods
+
+### Getting Your Employee ID
+
+You can find your employee ID in several ways:
+
+1. From your profile URL: When viewing your profile, the URL will contain your employee ID (e.g., `https://yourcompany.bamboohr.com/employees/employee.php?id=123`)
 
 **Example .env file:**
 
@@ -89,8 +115,6 @@ You can pass your BambooHR API token and company domain directly to the methods,
 BAMBOOHR_TOKEN=your_api_token_here
 BAMBOOHR_COMPANY_DOMAIN=yourcompany
 BAMBOOHR_EMPLOYEE_ID=123
-BAMBOOHR_PROJECT_ID=456
-BAMBOOHR_TASK_ID=789
 ```
 
 ## Extending
@@ -103,24 +127,4 @@ Add new methods in `src/apis/bamboohr.ts` and export them from `src/index.ts`.
 
 ## License
 
-MIT License
-
-Copyright (c) 2024 Encore Shao
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This project is licensed under the MIT License. See the LICENSE file for details.
