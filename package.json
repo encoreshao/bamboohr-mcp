@@ -1,0 +1,42 @@
+{
+  "name": "bamboohr-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) library for BambooHR API integration using Node.js and TypeScript.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "author": "Encore Shao",
+  "homepage": "https://github.com/encoreshao/bamboohr-mcp",
+  "keywords": [
+    "bamboo",
+    "bamboohr",
+    "api",
+    "microservice",
+    "MCP",
+    "model context protocol",
+    "nodejs",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/encoreshao/bamboohr-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/encoreshao/bamboohr-mcp/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "fast-xml-parser": "^5.2.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
